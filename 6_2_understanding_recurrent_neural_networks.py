@@ -87,14 +87,18 @@ batch_size = 32
 
 logging.info('Loading data...')
 (input_train, y_train), (input_test, y_test) = imdb.load_data(num_words=max_features)
-logging.info(len(input_train), 'train sequences')
-logging.info(len(input_test), 'test sequences')
+logging.info('{len_input_train} train sequences'.format(len_input_train = len(
+    input_train)))
+logging.info('{len_input_test} test sequences'
+    .format(len_input_test = len(input_test)))
 
 logging.info('Pad sequences (samples x time)')
 input_train = sequence.pad_sequences(input_train, maxlen=maxlen)
 input_test = sequence.pad_sequences(input_test, maxlen=maxlen)
-logging.info('input_train shape:', input_train.shape)
-logging.info('input_test shape:', input_test.shape)
+logging.info('input_train shape: {input_train_shape}'.format(
+             input_train_shape = input_train.shape))
+logging.info('input_test shape: {input_test_shape}'.format(
+    input_test_shape = input_test.shape))
 
 """Let's train a simple recurrent network using an `Embedding` layer and a `SimpleRNN` layer:"""
 
