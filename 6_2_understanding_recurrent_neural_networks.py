@@ -62,7 +62,8 @@ model.add(SimpleRNN(32, return_sequences=True))
 model.add(SimpleRNN(32))  # This last layer only returns the last outputs.
 model.summary()
 
-"""Now let's try to use such a model on the IMDB movie review classification problem. First, let's preprocess the data:"""
+"""Now let's try to use such a model on the IMDB movie review classification problem. First, let's preprocess the 
+data: """
 
 from keras.datasets import imdb
 from keras.preprocessing import sequence
