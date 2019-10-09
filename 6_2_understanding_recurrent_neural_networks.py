@@ -107,7 +107,7 @@ model.add(Dense(1, activation='sigmoid'))
 
 file_path = "simple.rnn.best.hd5"
 
-if (path.exists()):
+if (path.exists(file_path)):
     logging.info("loading model from {file_path}".format(file_path = file_path))
     # checkpoint
     checkpoint = ModelCheckpoint(file_path, monitor='val_accuracy', verbose=1,
@@ -187,7 +187,7 @@ model.add(LSTM(32))
 model.add(Dense(1, activation='sigmoid'))
 
 file_path = "lstm.hd5"
-if (path.exists()):
+if (path.exists(file_path)):
     logging.info("loading model from {file_path}".format(file_path=file_path))
     # checkpoint
     checkpoint = ModelCheckpoint(file_path, monitor='val_accuracy', verbose=1,
